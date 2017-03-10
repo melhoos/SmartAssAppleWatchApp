@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		41C5779B1E7311A90004E6F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C5779A1E7311A90004E6F8 /* AppDelegate.swift */; };
 		41C5779D1E7311A90004E6F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C5779C1E7311A90004E6F8 /* ViewController.swift */; };
-		41C577A01E7311A90004E6F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C5779E1E7311A90004E6F8 /* Main.storyboard */; };
 		41C577A21E7311A90004E6F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41C577A11E7311A90004E6F8 /* Assets.xcassets */; };
 		41C577A51E7311A90004E6F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41C577A31E7311A90004E6F8 /* LaunchScreen.storyboard */; };
 		41C577AA1E7311A90004E6F8 /* SmartAssAppleWatchApp WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 41C577A91E7311A90004E6F8 /* SmartAssAppleWatchApp WatchKit App.app */; };
@@ -67,7 +66,6 @@
 		41C577971E7311A90004E6F8 /* SmartAssAppleWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartAssAppleWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C5779A1E7311A90004E6F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41C5779C1E7311A90004E6F8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		41C5779F1E7311A90004E6F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41C577A11E7311A90004E6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41C577A41E7311A90004E6F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		41C577A61E7311A90004E6F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,7 +123,6 @@
 			children = (
 				41C5779A1E7311A90004E6F8 /* AppDelegate.swift */,
 				41C5779C1E7311A90004E6F8 /* ViewController.swift */,
-				41C5779E1E7311A90004E6F8 /* Main.storyboard */,
 				41C577A11E7311A90004E6F8 /* Assets.xcassets */,
 				41C577A31E7311A90004E6F8 /* LaunchScreen.storyboard */,
 				41C577A61E7311A90004E6F8 /* Info.plist */,
@@ -261,7 +258,6 @@
 			files = (
 				41C577A51E7311A90004E6F8 /* LaunchScreen.storyboard in Resources */,
 				41C577A21E7311A90004E6F8 /* Assets.xcassets in Resources */,
-				41C577A01E7311A90004E6F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,14 +315,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		41C5779E1E7311A90004E6F8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				41C5779F1E7311A90004E6F8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		41C577A31E7311A90004E6F8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
