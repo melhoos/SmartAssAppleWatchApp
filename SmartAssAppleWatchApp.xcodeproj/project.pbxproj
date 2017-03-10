@@ -78,6 +78,7 @@
 		41C577BF1E7311A90004E6F8 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		41C577C11E7311A90004E6F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		41C577C31E7311A90004E6F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41C577D11E7337C10004E6F8 /* SmartAssAppleWatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SmartAssAppleWatchApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +122,7 @@
 		41C577991E7311A90004E6F8 /* SmartAssAppleWatchApp */ = {
 			isa = PBXGroup;
 			children = (
+				41C577D11E7337C10004E6F8 /* SmartAssAppleWatchApp.entitlements */,
 				41C5779A1E7311A90004E6F8 /* AppDelegate.swift */,
 				41C5779C1E7311A90004E6F8 /* ViewController.swift */,
 				41C577A11E7311A90004E6F8 /* Assets.xcassets */,
@@ -219,7 +221,13 @@
 				TargetAttributes = {
 					41C577961E7311A90004E6F8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 58TV7Y2UZQ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					41C577A81E7311A90004E6F8 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -495,6 +503,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartAssAppleWatchApp/SmartAssAppleWatchApp.entitlements;
+				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				INFOPLIST_FILE = SmartAssAppleWatchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp;
@@ -507,6 +517,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SmartAssAppleWatchApp/SmartAssAppleWatchApp.entitlements;
+				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				INFOPLIST_FILE = SmartAssAppleWatchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp;
