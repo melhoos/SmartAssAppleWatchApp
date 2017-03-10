@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func registerPushNotifications() {
+    /*func registerPushNotifications() {
         DispatchQueue.main.async {
             let settings = UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil)
             UIApplication.shared.registerUserNotificationSettings(settings)
@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         if notificationSettings.types != UIUserNotificationType() {
             application.registerForRemoteNotifications()
         }
-    }
+    }*/
     
 
 
