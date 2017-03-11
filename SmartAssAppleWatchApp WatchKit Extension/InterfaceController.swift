@@ -11,9 +11,10 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
-
-    @IBOutlet var notifySlackButton: WKInterfaceButton!
+    
+    var timer = Timer()
+    
+    @IBOutlet var tempLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -24,17 +25,14 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        tempLabelInterval()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
-    @IBAction func ActionForButton() {
-        makePOSTcall()
-    }
-    
+
     func makePOSTcall() {
         
         let json: [String: Any] = ["text": "test"]
@@ -52,6 +50,7 @@ class InterfaceController: WKInterfaceController {
             if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                 print("statusCode should be 200, but is \(httpStatus.statusCode)")
                 print("response = \(response)")
+
             }
             
             let responseString = String(data: data, encoding: .utf8)
@@ -61,7 +60,46 @@ class InterfaceController: WKInterfaceController {
         
     }
     
-
+    func tempLabelInterval() {
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(makeGETcall), userInfo: nil, repeats: true)
+    }
+    
+    func makeGETcall() {
+        
+        var request = URLRequest(url: URL(string: "http://10.59.2.228:1880/temperature")!)
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with:request) { (data, response, error) in
+            if error != nil {
+            } else {
+                do {
+                    let parsedData = try JSONSerialization.jsonObject (with: data!, options: []) as! [[String:Any]]
+                    let array = parsedData[0] as! [String:Any]
+                    let temp = array["temperature"] as! Double
+                    var tempString = (String(format:"Temp: %.1fºC ", temp))
+                    if (temp > 37) { tempString.append("🔥") }
+                    else if ( temp == 37 ) { tempString.append("👌🏼") }
+                    else if (temp < 37) { tempString.append("❄️") }
+                    self.tempLabel.setText(tempString)
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+            
+            }.resume()
+    }
+    
+    func convertToDictionary(text: String) -> [String: Any]? {
+        if let data = text.data(using: .utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+        return nil
+    }
+    
+    
     
     
     
