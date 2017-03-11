@@ -14,13 +14,8 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SmartAssAppleWatchApp_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <button width="1" alignment="left" title="Start" id="S4J-uS-AF2">
-                            <connections>
-                                <action selector="ActionForButton" destination="AgC-eL-Hgc" id="sDO-Ba-fyh"/>
-                            </connections>
-                        </button>
                         <label alignment="center" verticalAlignment="center" baselineAdjustment="alignCenters" numberOfLines="5" id="CgA-SY-vqg"/>
-                        <label alignment="center" verticalAlignment="center" text="Temp" id="wW7-qy-fj0"/>
+                        <label alignment="center" verticalAlignment="center" text="Loading..." id="wW7-qy-fj0"/>
                     </items>
                     <connections>
                         <outlet property="tempLabel" destination="wW7-qy-fj0" id="nZl-aH-vys"/>

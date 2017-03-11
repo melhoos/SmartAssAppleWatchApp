@@ -13,8 +13,6 @@ import Foundation
 class InterfaceController: WKInterfaceController {
     
     var timer = Timer()
-
-    @IBOutlet var notifySlackButton: WKInterfaceButton!
     
     @IBOutlet var tempLabel: WKInterfaceLabel!
     
@@ -27,17 +25,14 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        tempLabelInterval()
     }
     
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-    
-    @IBAction func ActionForButton() {
-        tempLabelInterval()
-    }
-    
+
     func makePOSTcall() {
         
         let json: [String: Any] = ["text": "test"]
@@ -80,7 +75,10 @@ class InterfaceController: WKInterfaceController {
                     let parsedData = try JSONSerialization.jsonObject (with: data!, options: []) as! [[String:Any]]
                     let array = parsedData[0] as! [String:Any]
                     let temp = array["temperature"] as! Double
-                    let tempString = (String(format:"Temp: %.1fºC", temp))
+                    var tempString = (String(format:"Temp: %.1fºC ", temp))
+                    if (temp > 37) { tempString.append("🔥") }
+                    else if ( temp == 37 ) { tempString.append("👌🏼") }
+                    else if (temp < 37) { tempString.append("❄️") }
                     self.tempLabel.setText(tempString)
                 } catch let error as NSError {
                     print(error)
