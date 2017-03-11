@@ -24,6 +24,6 @@ Open _XCode_
 
 Open root of the project folder 
 
-Build the application by ``cmd + b`` or from menu: Product -> Build
+Build the application by ``cmd + b`` or from menu: _Product -> Build_
 
-Select Run or ``cmd + r`` or from menu: Product -> Run
+Select Run or ``cmd + r`` or from menu: _Product -> Run_
