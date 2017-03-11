@@ -16,8 +16,10 @@
                     <items>
                         <label alignment="center" verticalAlignment="center" baselineAdjustment="alignCenters" numberOfLines="5" id="CgA-SY-vqg"/>
                         <label alignment="center" verticalAlignment="center" text="Loading..." id="wW7-qy-fj0"/>
+                        <label height="59" alignment="center" verticalAlignment="bottom" text="👶🏼👶🏼👶🏼" id="KMZ-br-Avs"/>
                     </items>
                     <connections>
+                        <outlet property="diaperLabel" destination="KMZ-br-Avs" id="mTk-vI-l4U"/>
                         <outlet property="tempLabel" destination="wW7-qy-fj0" id="nZl-aH-vys"/>
                     </connections>
                 </controller>

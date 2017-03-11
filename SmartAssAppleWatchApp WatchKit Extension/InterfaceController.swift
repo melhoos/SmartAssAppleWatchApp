@@ -16,6 +16,9 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet var tempLabel: WKInterfaceLabel!
     
+    @IBOutlet var diaperLabel: WKInterfaceLabel!
+    
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
@@ -26,6 +29,7 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         tempLabelInterval()
+        diaperLabelInterval()
     }
     
     override func didDeactivate() {
@@ -33,7 +37,7 @@ class InterfaceController: WKInterfaceController {
         super.didDeactivate()
     }
 
-    func makePOSTcall() {
+    /*func makePOSTcall() {
         
         let json: [String: Any] = ["text": "test"]
         let jsonData = try? JSONSerialization.data(withJSONObject: json)
@@ -58,7 +62,10 @@ class InterfaceController: WKInterfaceController {
         }
         task.resume()
         
-    }
+    }*/
+    
+    func diaperLabelInterval() {
+        timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(getDiaperCall), userInfo: nil, repeats: true)    }
     
     func tempLabelInterval() {
         timer = Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(makeGETcall), userInfo: nil, repeats: true)
@@ -87,6 +94,30 @@ class InterfaceController: WKInterfaceController {
             
             }.resume()
     }
+    
+    func getDiaperCall() {
+        
+        var request = URLRequest(url: URL(string: "http://10.59.2.228:1880/diaper")!)
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with:request) { (data, response, error) in
+            if error != nil {
+            } else {
+                do {
+                    let parsedData = try JSONSerialization.jsonObject (with: data!, options: []) as! [[String:Any]]
+                    let array = parsedData[0] as! [String:Any]
+                    let diaper = array["wet"] as! Double
+                    var diaperString = ""
+                    if (diaper == 1) { diaperString.append("💩💦💩💦") }
+                    else if (diaper == 0) { diaperString.append("👶🏼👶🏼👶🏼") }
+                    self.diaperLabel.setText(diaperString)
+                } catch let error as NSError {
+                    print(error)
+                }
+            }
+            
+            }.resume()
+    }
+    
     
     func convertToDictionary(text: String) -> [String: Any]? {
         if let data = text.data(using: .utf8) {
