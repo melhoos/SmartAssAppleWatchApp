@@ -35,12 +35,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func ActionForButton() {
-        print("triggered button")
-        //makePOSTcall()
-        //makeGETcall()
         tempLabelInterval()
-        //tempLabelInterval()
-        //tempLabel.setText("test")
     }
     
     func makePOSTcall() {
@@ -75,58 +70,24 @@ class InterfaceController: WKInterfaceController {
     }
     
     func makeGETcall() {
-        print("kommer hit! 11 gang")
+        
         var request = URLRequest(url: URL(string: "http://10.59.2.228:1880/temperature")!)
         request.httpMethod = "GET"
         URLSession.shared.dataTask(with:request) { (data, response, error) in
             if error != nil {
-                print(error)
             } else {
                 do {
-                    
-                    let parsedData = try JSONSerialization.jsonObject(with: data!, options: []) as! [String:Any]
-                    let currentConditions = parsedData as! [String:Any]
-                    
-                    print(currentConditions)
-                    
-                    let currentTemperature = currentConditions["temperature"] as! String?
-                    print(currentTemperature)
-                    self.tempLabel.setText(currentTemperature)
+                    let parsedData = try JSONSerialization.jsonObject (with: data!, options: []) as! [[String:Any]]
+                    let array = parsedData[0] as! [String:Any]
+                    let temp = array["temperature"] as! Double
+                    let tempString = (String(format:"Temp: %.1fºC", temp))
+                    self.tempLabel.setText(tempString)
                 } catch let error as NSError {
                     print(error)
                 }
             }
             
             }.resume()
-        /*
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            
-            // convert String to NSData
-            var nsData: NSData = data.dataUsingEncoding(NSUTF8StringEncoding)!
-            var error: NSError?
-            
-            // convert NSData to 'AnyObject'
-            let anyObj: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions(0),
-                                                                            error: &error)
-            /*
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-                
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            */
-            print("responseString = \(responseString)")
-            self.tempLabel.setText(responseString)
-        }
-        task.resume()
-        */
     }
     
     func convertToDictionary(text: String) -> [String: Any]? {
