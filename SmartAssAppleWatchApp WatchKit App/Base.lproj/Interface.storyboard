@@ -15,8 +15,13 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="SmartAssAppleWatchApp_WatchKit_App" customModuleProvider="target">
                     <items>
                         <label alignment="center" verticalAlignment="center" baselineAdjustment="alignCenters" numberOfLines="5" id="CgA-SY-vqg"/>
-                        <label alignment="center" verticalAlignment="center" text="Loading..." id="wW7-qy-fj0"/>
-                        <label height="59" alignment="center" verticalAlignment="bottom" text="👶🏼👶🏼👶🏼" id="KMZ-br-Avs"/>
+                        <label alignment="center" text="Loading..." id="wW7-qy-fj0"/>
+                        <label height="59" alignment="center" verticalAlignment="center" text="👶🏼👶🏼👶🏼" id="KMZ-br-Avs"/>
+                        <button width="1" alignment="left" verticalAlignment="bottom" title="Camera 📸" id="dac-aO-HtZ">
+                            <connections>
+                                <action selector="ActionCameraButton" destination="AgC-eL-Hgc" id="Uxb-92-f1S"/>
+                            </connections>
+                        </button>
                     </items>
                     <connections>
                         <outlet property="diaperLabel" destination="KMZ-br-Avs" id="mTk-vI-l4U"/>

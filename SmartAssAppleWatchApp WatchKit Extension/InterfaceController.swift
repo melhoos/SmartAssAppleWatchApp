@@ -18,11 +18,18 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet var diaperLabel: WKInterfaceLabel!
     
+    @IBOutlet var cameraButton: WKInterfaceButton!
     
     override func awake(withContext context: Any?) {
+       
         super.awake(withContext: context)
         
         // Configure interface objects here.
+    }
+    
+    @IBAction func ActionCameraButton () {
+        print("click")
+        getImage()
     }
     
     override func willActivate() {
@@ -112,6 +119,27 @@ class InterfaceController: WKInterfaceController {
                     self.diaperLabel.setText(diaperString)
                 } catch let error as NSError {
                     print(error)
+                }
+            }
+            
+            }.resume()
+    }
+    
+    func getImage() {
+        
+        var request = URLRequest(url: URL(string: "http://10.59.2.228:1880/image")!)
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with:request) { (data, response, error) in
+            if error != nil {
+            } else {
+                do {
+                    print("data=\(data)")
+                    print("response=\(response)")
+                    //let parsedData = try JSONSerialization.jsonObject (with: data!, options: []) as! [[String:Any]]
+                    //let array = parsedData[0] as! [String:Any]
+ 
+                } catch let error as NSError {
+                    //print(error)
                 }
             }
             
