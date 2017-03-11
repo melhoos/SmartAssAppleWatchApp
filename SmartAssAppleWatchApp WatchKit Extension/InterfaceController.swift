@@ -16,6 +16,8 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet var tempLabel: WKInterfaceLabel!
     
+    @IBOutlet var showImage: WKInterfaceImage!
+    
     @IBOutlet var diaperLabel: WKInterfaceLabel!
     
     @IBOutlet var cameraButton: WKInterfaceButton!
@@ -28,7 +30,7 @@ class InterfaceController: WKInterfaceController {
     }
     
     @IBAction func ActionCameraButton () {
-        print("click")
+        print("click camera button!")
         getImage()
     }
     
@@ -137,6 +139,7 @@ class InterfaceController: WKInterfaceController {
                     print("response=\(response)")
                     //let parsedData = try JSONSerialization.jsonObject (with: data!, options: []) as! [[String:Any]]
                     //let array = parsedData[0] as! [String:Any]
+                    self.showImage.setImageData(data)
  
                 } catch let error as NSError {
                     //print(error)

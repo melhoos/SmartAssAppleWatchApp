@@ -22,9 +22,11 @@
                                 <action selector="ActionCameraButton" destination="AgC-eL-Hgc" id="Uxb-92-f1S"/>
                             </connections>
                         </button>
+                        <imageView alignment="center" verticalAlignment="bottom" id="jTE-UY-G2a"/>
                     </items>
                     <connections>
                         <outlet property="diaperLabel" destination="KMZ-br-Avs" id="mTk-vI-l4U"/>
+                        <outlet property="showImage" destination="jTE-UY-G2a" id="V08-my-h4y"/>
                         <outlet property="tempLabel" destination="wW7-qy-fj0" id="nZl-aH-vys"/>
                     </connections>
                 </controller>
