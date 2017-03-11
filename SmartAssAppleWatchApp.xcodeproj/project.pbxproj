@@ -231,10 +231,12 @@
 					};
 					41C577A81E7311A90004E6F8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 58TV7Y2UZQ;
 						ProvisioningStyle = Automatic;
 					};
 					41C577B71E7311A90004E6F8 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 58TV7Y2UZQ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -437,9 +439,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				INFOPLIST_FILE = "SmartAssAppleWatchApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itera.smartass.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -453,9 +456,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				INFOPLIST_FILE = "SmartAssAppleWatchApp WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itera.smartass.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -470,9 +474,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				IBSC_MODULE = SmartAssAppleWatchApp_WatchKit_Extension;
 				INFOPLIST_FILE = "SmartAssAppleWatchApp WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itera.smartass.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -487,9 +492,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				IBSC_MODULE = SmartAssAppleWatchApp_WatchKit_Extension;
 				INFOPLIST_FILE = "SmartAssAppleWatchApp WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itera.smartass.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -504,10 +510,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SmartAssAppleWatchApp/SmartAssAppleWatchApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				INFOPLIST_FILE = SmartAssAppleWatchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itera.smartass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -518,10 +526,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SmartAssAppleWatchApp/SmartAssAppleWatchApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 58TV7Y2UZQ;
 				INFOPLIST_FILE = SmartAssAppleWatchApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Ariot17.SmartAssAppleWatchApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itera.smartass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -546,6 +556,7 @@
 				41C577C81E7311A90004E6F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41C577CA1E7311A90004E6F8 /* Build configuration list for PBXNativeTarget "SmartAssAppleWatchApp WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -554,6 +565,7 @@
 				41C577CC1E7311A90004E6F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41C577CE1E7311A90004E6F8 /* Build configuration list for PBXNativeTarget "SmartAssAppleWatchApp" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +574,7 @@
 				41C577D01E7311A90004E6F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
